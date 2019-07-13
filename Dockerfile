@@ -12,6 +12,7 @@ ENV GLASSFISH_CONFIG /gfinit
 ENV PATH /opt/glassfish3/bin:$PATH   
 
 ADD ./docker-entrypoint.sh /docker-entrypoint.sh
+RUN chmod +x /docker-entrypoint.sh
 
 EXPOSE 4848 8080 8181
 
