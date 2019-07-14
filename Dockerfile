@@ -8,7 +8,8 @@ RUN apt-get update && \
    apt-get clean && \
    rm -rf /var/lib/apt/lists/*
 
-ENV GLASSFISH_CONFIG /gfinit
+ENV GLASSFISH_CONFIG /gf_config
+ENV GLASSFISH_DEPLOY /gf_deploy
 ENV PATH /opt/glassfish3/bin:$PATH   
 
 ADD ./docker-entrypoint.sh /docker-entrypoint.sh
