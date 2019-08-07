@@ -50,7 +50,7 @@ configure () {
       GFPWD="/.gfpwd"
       pwd="--user=admin --passwordfile=$GFPWD"
       echo "AS_ADMIN_PASSWORD=" > $GFPWD
-      echo "AS_ADMIN_NEWPASSWORD=\"$PASS\"" >> $GFPWD
+      echo "AS_ADMIN_NEWPASSWORD=$PASS" >> $GFPWD
       msg "---> Apply password"
       asadmin $pwd change-admin-password --domain_name domain1
 
@@ -65,7 +65,7 @@ configure () {
       msg ""
 
       # Enable secure admin login
-      echo "AS_ADMIN_PASSWORD=\"$PASS\"" > $GFPWD
+      echo "AS_ADMIN_PASSWORD=$PASS" > $GFPWD
       msg "---> Enable secure admin"
       asadmin $pwd enable-secure-admin
 
